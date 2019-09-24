@@ -1,0 +1,147 @@
+Link:
+http://amit2647.blogspot.com/2015/04/differential-manchester-signal.html
+
+
+// code for   NRZ-L  signal
+
+clc;
+clear;
+x=[ 0 1 0 1 0 0 0 1 1 0 1 1 0 0 0 1 ];
+T=length(x);
+n=200;
+N=n*T;
+dt=T/N;
+t=0:dt:T;
+y=zeros(1,length(t));
+for i=0:T-1;
+    if x(i+1)==1
+        y(i*n+1 : (i+1)*n)=1;
+    else
+        y(i*n+1 : (i+1)*n)=-1;
+    end;
+end;
+plot(t,y);
+axis([0 t(end) -2 2]);
+grid on;
+title('NRZ-L');
+
+
+//codes for NRZ-I in matlab
+
+clc;
+clear;
+x=[0 1 0 1 0 0 0 1 1 0 1 1 0 0 0 1];
+T=length(x);
+n=200;
+N=n*T;
+dt=T/N;
+pulse=-1;
+t=0:dt:T;
+y=zeros(1,length(t));
+  for i=0:T-1;
+    if x(i+1)==1
+        if pulse==1
+            pulse=-1;
+            y(i*n+1 : (i+1)*n)=-1;
+        else
+            pulse=1;
+            y(i*n+1 : (i+1)*n);
+        end;
+    else
+        y(i*n+1 : (i+1)*n)=pulse;
+    end;
+  end;
+  plot(t,y);
+  axis([0 t(end) -2 2]);
+  grid on;
+  title('NRZ-I');
+
+
+//code for Bipolar AMI
+
+clc;
+clear;
+x=[0 1 0 1 0 0 0 1 1 0 1 1 0 0 0 1];
+T=length(x);
+n=200;
+N=n*T;
+dt=T/N;
+pulse=-1;
+t=0:dt:T;
+y=zeros(1,length(t));
+   for i=0:T-1;
+         if x(i+1)==1
+             if pulse==-1
+                 y(i*n+1 : (i+1)*n)=-1;
+             else
+                 pulse=1;
+                 y(i*n+1 : (i+1)*n)=1;
+             end;
+         else
+             y(i*n+1 : (i+1)*n)=0;
+         end;
+   end;
+   plot(t,y);
+   axis([0 t(end) -2 2]);
+   grid on;
+   title('Bipolar AMI');
+  
+
+
+
+//code for Manchester signal
+
+clc;
+clear;
+x=[0 1 0 1 0 0 0 1 1 0 1 1 0 0 0 1];
+T=length(x);
+n=100;
+N=2*n*T;
+dt=T/N;
+t=0:dt:T;
+y=zeros(1,length(t));
+    for i=0:1:(T-1);
+        if x(i+1)==1
+            y(i*2*n+1 : (2*i+1)*n)=-1;
+            y((i*2+1)*n+1 : (2*i+2)*n)=1;
+        else
+            y(i*2*n+1 : (2*i+1)*n)=1;
+            y((2*i+1)*n+1 : (2*i+2)*n)=-1;
+        end;
+    end;
+     plot(t,y);
+     axis([0 t(end) -2 2]);
+     grid on;
+     title('Manchester');
+
+
+
+//code for diff. manchester signal
+
+clc;
+clear;
+x=[0 1 0 1 0 0 0 1 1 0 1 1 0 0 0 1];
+T=length(x);
+n=100;
+N=2*n*T;
+dt=T/N;
+pulse=-1;
+t=0:dt:T;
+y=zeros(1,length(t));
+  for i=0:(T-1);
+         if x(i+1)==1
+             if pulse==1
+                 pulse=-1;
+                 y(i*2*n+1 : (2*i+1)*n)=-1*pulse;
+                 y((2*i+1)*n+1 : (2*i+2)*n)=pulse;
+             else
+                 pulse=1;
+                 y(i*2*n+1 : (2*i+1)*n)=-1*pulse;
+                 y((2*i+1)*n+1 : (2*i+2)*n)=pulse;
+             end;
+         end;
+  end;
+plot(t,y);
+axis([0  t(end)  -2  2]);
+grid on;
+title('differential Manchester');
