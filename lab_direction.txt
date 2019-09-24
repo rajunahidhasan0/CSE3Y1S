@@ -1,0 +1,31 @@
+Communication Engineering:
+Exam Date: 25.09.2019
+
+Unipoler
+NRZ-L
+NRZ-I
+RZ
+Manchester
+Differential Manchester
+AMI
+HDB3
+B8ZS
+AM
+FM
+Links That May Help You:
+https://manikarea.home.blog/tag/line-coding (Preferable, Well Explained, Update)
+https://manikarea.home.blog/2019/09/16/amplitude-modulation-am-with-matlab-code/?fbclid=IwAR01-nqIdbcXyyuIjgp5yNhmmJzS3cCuhrXXpmnRBMkZTrIxCN-fYlck8wM
+https://manikarea.home.blog/2019/09/16/frequency-modulation-fm-with-matlab-code/?fbclid=IwAR0rowylHH27sExpQJWy7y5d-xE-Vg-QCmD28rhv7R4J6VHh9Mmte7tPAy0
+https://github.com/rahathossenmanik/Communication-Engineering-MatLab
+
+
+
+Android Development Lab:
+Exam Date: 29.09.2019
+
+Task: Make an apps (Like Calculator)
+Mandatory: Using Git, Using Unit Test
+Optional: Using UI Test
+Links That May Help You:
+
+All exam time: 9 AM to 12 PMt May Help You:
